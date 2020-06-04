@@ -137,21 +137,25 @@ class snake:
         while not self.isover:
             if self.durum:
                 temp = keyboard.read_key()
-                if (temp == "w" or temp == "up") and self.cur != "s":
+                if (temp == "w" or temp == "up") and (self.cur != "s" and self.cur != "w"):
                     self.cur = "w"
-                if (temp  ==  "a" or temp == "left") and self.cur != "d":
+                    self.durum = False
+                if (temp  ==  "a" or temp == "left") and (self.cur != "d" and self.cur != "a"):
                     self.cur = "a"
-                if (temp  == "s" or temp == "down") and self.cur != "w":
+                    self.durum = False
+                if (temp  == "s" or temp == "down") and (self.cur != "w" and self.cur != "s"):
                     self.cur = "s"
-                if (temp  ==  "d" or temp == "right") and self.cur != "a":
+                    self.durum = False
+                if (temp  ==  "d" or temp == "right") and (self.cur != "a" and self.cur != "d"):
                     self.cur = "d"   
+                    self.durum = False
                 if temp == "f3":
                     self.debug = True
                 if temp == "f4":
                     self.debug = False
                 if temp == "esc":
                     self.isover = True
-                self.durum = False
+                
 if __name__ == "__main__":
     Settings = []
     try:
