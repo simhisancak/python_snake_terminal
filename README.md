@@ -1,1 +1,1 @@
-Python Snake Game in CMD
+Python Snake Game in Terminal
